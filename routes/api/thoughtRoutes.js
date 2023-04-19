@@ -1,23 +1,28 @@
+//------Acquire Express package:
 const router = require('express').Router();
+
+//------Consts for Thought Functions:
 const {
-  getStudents,
-  getSingleStudent,
-  createStudent,
-  deleteStudent,
-  addAssignment,
-  removeAssignment,
+  getAllThoughts,
+  getThoughtById,
+  createThought,
+  updateThoughtById,
+  deleteThoughtById,
+  addReaction,
+  removeReaction,
 } = require('../../controllers/thoughtController');
 
-// /api/students
-router.route('/').get(getStudents).post(createStudent);
+//------Api/Thoughts:
+router.route('/').get(getAllThoughts).post(createThought);
 
-// /api/students/:studentId
-router.route('/:studentId').get(getSingleStudent).delete(deleteStudent);
+//------Api/Thoughts/:Id:
+router.route('/:Id').get(getThoughtById).put(updateThoughtById).delete(deleteThoughtById);
 
-// /api/students/:studentId/assignments
-router.route('/:studentId/assignments').post(addAssignment);
+//------Api/Thoughts/:ThougthId/Reactions:
+router.route('/:thoughtId/reactions').post(addReaction);
 
-// /api/students/:studentId/assignments/:assignmentId
-router.route('/:studentId/assignments/:assignmentId').delete(removeAssignment);
+//------Api/Thoughts/:ThougthId/Reactions/:ReatcionID:
+router.route('/:studentId/assignments/:assignmentId').delete(removeReaction);
 
+//------Exports Thought Routes:
 module.exports = router;

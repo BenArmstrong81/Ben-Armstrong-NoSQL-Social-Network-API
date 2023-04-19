@@ -203,78 +203,51 @@ This will not be a model, but rather will be used as the `reaction` field's subd
 * `DELETE` to pull and remove a reaction by the reaction's `reactionId` value
 
 ## Grading Requirements
-
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
-
-This Challenge is graded based on the following criteria:
-
-### Deliverables: 10%
-
 * Your GitHub repository containing your application code.
-
-### Walkthrough Video: 37%
-
 * A walkthrough video that demonstrates the functionality of the social media API must be submitted, and a link to the video should be included in your README file.
-
-  * The walkthrough video must show all of the technical acceptance criteria being met.
-
-  * The walkthrough video must demonstrate how to start the application’s server.
-
-  * The walkthrough video must demonstrate GET routes for all users and all thoughts being tested in Insomnia.
-
-  * The walkthrough video must demonstrate GET routes for a single user and a single thought being tested in Insomnia.
-
-  * The walkthrough video must demonstrate POST, PUT, and DELETE routes for users and thoughts being tested in Insomnia.
-
-  * Walkthrough video must demonstrate POST and DELETE routes for a user’s friend list being tested in Insomnia.
-
-  * Walkthrough video must demonstrate POST and DELETE routes for reactions to thoughts being tested in Insomnia.
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the preceding acceptance criteria plus the following:
-
-  * Uses the [Mongoose package](https://www.npmjs.com/package/mongoose) to connect to a MongoDB database.
-
-  * Includes User and Thought models outlined in the Challenge instructions.
-
-  * Includes schema settings for User and Thought models as outlined in the Challenge instructions.
-
-  * Includes Reactions as the `reaction` field's subdocument schema in the Thought model.
-
-  * Uses functionality to format queried timestamps properly.
-
-### Repository Quality: 13%
-
+* The walkthrough video must show all of the technical acceptance criteria being met.
+* The walkthrough video must demonstrate how to start the application’s server.
+* The walkthrough video must demonstrate GET routes for all users and all thoughts being tested in Insomnia.
+* The walkthrough video must demonstrate GET routes for a single user and a single thought being tested in Insomnia.
+* The walkthrough video must demonstrate POST, PUT, and DELETE routes for users and thoughts being tested in Insomnia.
+* Walkthrough video must demonstrate POST and DELETE routes for a user’s friend list being tested in Insomnia.
+* Walkthrough video must demonstrate POST and DELETE routes for reactions to thoughts being tested in Insomnia.
+* Uses the [Mongoose package](https://www.npmjs.com/package/mongoose) to connect to a MongoDB database.
+* Includes User and Thought models outlined in the Challenge instructions.
+* Includes schema settings for User and Thought models as outlined in the Challenge instructions.
+* Includes Reactions as the `reaction` field's subdocument schema in the Thought model.
+* Uses functionality to format queried timestamps properly.
 * Repository has a unique name.
-
 * Repository follows best practices for file structure and naming conventions.
-
 * Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
 * Repository contains multiple descriptive commit messages.
-
 * Repository contains a high-quality README with description and a link to a walkthrough video.
-
 ### Bonus: +10 Points
-
 * Application deletes a user's associated thoughts when the user is deleted.
 
-## Review
+# Credits
+* Ben Armstrong https://github.com/BenArmstrong81 <br>
 
-You are required to submit BOTH of the following for review:
+*With special thanks to The University of Adelaide Full Stack Web Development Class.*
 
-* A walkthrough video demonstrating the functionality of the application and all of the acceptance criteria being met.
+# What I Learned
+Building on the first third of the course, the past 6 weeks we have learnt the following; Node.js, Object-Oriented Programming (OOP), Express.js, SQL, Object-Relational Mapping (ORM), Heruku, Model View Controller (MVC) and much much more!!
 
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+Using the above skills I created this whole project from scratch including; HTML (using Handlebars,js), CSS, JavaScript, Node.js, Exress.js, SQL, GitHub, Heroku, Boostrap and README files. 
+  
+I feel rather proud, after only 13 weeks of coding and to be able to complete such a task is greatfully satisfying.
 
----
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+# Made With
+
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+![Sequelize](https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=Sequelize&logoColor=white)
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)  
+![Mongoose](https://img.shields.io/badge/npm%20package-mongoose-cyan?style=flat-square&logo=npm) 
+
+# License
+
+Please refer to the LICENSE in the repo. <br/>
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
