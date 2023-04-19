@@ -5,6 +5,12 @@ const userData = require('./userData.json');
 
 connection.on('error', (err) => err);
 
+// Drop existing courses
+// await Course.deleteMany({});
+
+// Drop existing students
+// await Student.deleteMany({});
+
 connection.once('open', async () => {
     console.log('connected');
     //------Drops Existing User
