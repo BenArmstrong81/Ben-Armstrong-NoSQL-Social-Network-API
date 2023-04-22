@@ -1,5 +1,6 @@
+//------Requires Mongoose for schema's:
 const { Schema, Types } = require("mongoose");
-// const { Schema, model, Types } = require("mongoose");
+
 
 const formatter = (timestamp) => {
     return timestamp.toLocaleString();
