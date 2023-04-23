@@ -20,10 +20,9 @@
   },
   "homepage": "https://github.com/BenArmstrong81/Ben-Armstrong-NoSQL-Social-Network-API#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "mongoose": "^6.0.13"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.9"
+    "express": "^4.18.2",
+    "moment": "^2.29.4",
+    "mongoose": "^7.0.4",
+    "nodemon": "^2.0.22"
   }
 }

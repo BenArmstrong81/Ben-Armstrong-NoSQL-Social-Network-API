@@ -16,13 +16,13 @@ const {
 router.route('/').get(getAllThoughts).post(createThought);
 
 //------Api/Thoughts/:Id:
-router.route('/:Id').get(getThoughtById).put(updateThoughtById).delete(deleteThoughtById);
+router.route('/:id').get(getThoughtById).put(updateThoughtById).delete(deleteThoughtById);
 
 //------Api/Thoughts/:ThougthId/Reactions:
 router.route('/:thoughtId/reactions').post(addReaction);
 
 //------Api/Thoughts/:ThougthId/Reactions/:ReatcionID:
-router.route('/:studentId/assignments/:assignmentId').delete(removeReaction);
+router.route('/:thoughtId/reactions/:reactionId').delete(removeReaction);
 
 //------Exports Thought Routes:
 module.exports = router;

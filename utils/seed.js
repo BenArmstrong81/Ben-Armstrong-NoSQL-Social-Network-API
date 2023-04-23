@@ -1,6 +1,6 @@
 //--------Requires Connection and Paths for Application to use:
 const connection = require('../config/connection');
-const { User } = require('../models');
+const { User, Thought } = require('../models');
 const { usersData, thoughtsData, reactionsData } = require("./data");
 
 connection.on('error', (err) => err);
@@ -8,12 +8,10 @@ connection.on('error', (err) => err);
 connection.once('open', async () => {
     console.log('connected');
     try{
-    //------Drops Existing User
+    //------Drops Existing User and Thoughts:
     await User.deleteMany({});
-    //------Add Users Collection and Await the Results
-    await User.collection.insertMany(userData);
     await Thought.deleteMany({});
-
+    //------Creates all schemas via data utils file:
     await User.create(usersData);
 
     const createdThoughts = await Thought.create(thoughtsData);

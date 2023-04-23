@@ -1,4 +1,4 @@
-//--------User Data:
+//--------User Data to be Seeded:
 const usersData = [
     {
       username: "micheal_schumacher",
@@ -22,7 +22,7 @@ const usersData = [
     },
   ];
   
-  //--------Thought Data:
+  //--------Thought Data to be Seeded:
   const thoughtsData = [
     {
       thoughtText: "JavaScript is a very versatile language.",
@@ -58,7 +58,7 @@ const usersData = [
     },
   ];
 
-  //--------Reaction Data:
+  //--------Reaction Data to be Seeded:
   const reactionsData = [
     {
       reactionBody: "Wow! I hadn't thought of that?!💭 great point!",
@@ -83,5 +83,5 @@ const usersData = [
   ];
   
   //--------Exports User, Thought and Reaction data:
-  module.exports = { usersData, thoughtsData, reactionsData};
+  module.exports = { usersData, thoughtsData, reactionsData };
   

@@ -1,5 +1,6 @@
-// const { Schema, model, Types } = require("mongoose");
-const { Schema, Types } = require("mongoose");
+//------const { Schema, model, Types } = require("mongoose");
+const { Schema, model } = require("mongoose");
+//------Imports the Reaction Schema:
 const reactionSchema = require("./Reaction");
 
 const formatter = (timestamp) => {

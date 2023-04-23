@@ -4,9 +4,7 @@ const apiRoutes = require("./api");
 
 router.use("/api", apiRoutes);
 
-router.use((req, res) => {
-  res.status(404).send("🚫 Wrong Route! 404 Not Found 🚫");
-});
+router.use((req, res) => res.send("🚫 Wrong route! 🚫"));
 
 //--------Exports Routes:
 module.exports = router;

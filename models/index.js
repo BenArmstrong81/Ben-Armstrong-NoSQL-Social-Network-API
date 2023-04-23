@@ -1,6 +1,6 @@
 //--------Acquires Model Paths ready for Exporting:
-const Reaction = require('./Reaction');
+const User = require('./User');
 const Thought = require('./Thought');
 
 //--------Exports All Models:
-module.exports = { Reaction, Thought };
+module.exports = { User, Thought };

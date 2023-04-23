@@ -1,4 +1,4 @@
-const { Schema, Types } = require('mongoose');
+const { Schema, model } = require("mongoose");
 // const { Schema, model, Types } = require("mongoose"); //BEN use model or not??
 
 const userSchema = new Schema(
@@ -13,7 +13,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
       unique: true,
-      match: [/.+@.+\..+/, "Must match a valid email address"],
+      match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, "Must match a valid email address"],
     },
     thoughts: [
       {
