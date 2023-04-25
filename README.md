@@ -32,176 +32,6 @@ WHEN I test API POST and DELETE routes in Insomnia
 THEN I am able to successfully create and delete reactions to thoughts and add and remove friends to a user’s friend list
 ```
 
-## Mock Up
-
-The following animations show examples of the application's API routes being tested in Insomnia.
-
-The following animation shows GET routes to return all users and all thoughts being tested in Insomnia:
-
-![Demo of GET routes to return all users and all thoughts being tested in Insomnia.](./Assets/18-nosql-homework-demo-01.gif)
-
-The following animation shows GET routes to return a single user and a single thought being tested in Insomnia:
-
-![Demo that shows GET routes to return a single user and a single thought being tested in Insomnia.](./Assets/18-nosql-homework-demo-02.gif)
-
-The following animation shows the POST, PUT, and DELETE routes for users being tested in Insomnia:
-
-![Demo that shows the POST, PUT, and DELETE routes for users being tested in Insomnia.](./Assets/18-nosql-homework-demo-03.gif)
-
-In addition to this, your walkthrough video should show the POST, PUT, and DELETE routes for thoughts being tested in Insomnia.
-
-The following animation shows the POST and DELETE routes for a user’s friend list being tested in Insomnia:
-
-![Demo that shows the POST and DELETE routes for a user’s friend list being tested in Insomnia.](./Assets/18-nosql-homework-demo-04.gif)
-
-In addition to this, your walkthrough video should show the POST and DELETE routes for reactions to thoughts being tested in Insomnia.
-
-## Getting Started
-
-Be sure to have MongoDB installed on your machine. Follow the [MongoDB installation guide on The Full-Stack Blog](https://coding-boot-camp.github.io/full-stack/mongodb/how-to-install-mongodb) to install MongoDB locally.
-
-Use the following guidelines to set up your models and API routes:
-
-### Models
-
-**User**:
-
-* `username`
-  * String
-  * Unique
-  * Required
-  * Trimmed
-
-* `email`
-  * String
-  * Required
-  * Unique
-  * Must match a valid email address (look into Mongoose's matching validation)
-
-* `thoughts`
-  * Array of `_id` values referencing the `Thought` model
-
-* `friends`
-  * Array of `_id` values referencing the `User` model (self-reference)
-
-**Schema Settings**:
-
-Create a virtual called `friendCount` that retrieves the length of the user's `friends` array field on query.
-
----
-
-**Thought**:
-
-* `thoughtText`
-  * String
-  * Required
-  * Must be between 1 and 280 characters
-
-* `createdAt`
-  * Date
-  * Set default value to the current timestamp
-  * Use a getter method to format the timestamp on query
-
-* `username` (The user that created this thought)
-  * String
-  * Required
-
-* `reactions` (These are like replies)
-  * Array of nested documents created with the `reactionSchema`
-
-**Schema Settings**:
-
-Create a virtual called `reactionCount` that retrieves the length of the thought's `reactions` array field on query.
-
----
-
-**Reaction** (SCHEMA ONLY)
-
-* `reactionId`
-  * Use Mongoose's ObjectId data type
-  * Default value is set to a new ObjectId
-
-* `reactionBody`
-  * String
-  * Required
-  * 280 character maximum
-
-* `username`
-  * String
-  * Required
-
-* `createdAt`
-  * Date
-  * Set default value to the current timestamp
-  * Use a getter method to format the timestamp on query
-
-**Schema Settings**:
-
-This will not be a model, but rather will be used as the `reaction` field's subdocument schema in the `Thought` model.
-
-### API Routes
-
-**`/api/users`**
-
-* `GET` all users
-
-* `GET` a single user by its `_id` and populated thought and friend data
-
-* `POST` a new user:
-
-```json
-// example data
-{
-  "username": "lernantino",
-  "email": "lernantino@gmail.com"
-}
-```
-
-* `PUT` to update a user by its `_id`
-
-* `DELETE` to remove user by its `_id`
-
-**BONUS**: Remove a user's associated thoughts when deleted.
-
----
-
-**`/api/users/:userId/friends/:friendId`**
-
-* `POST` to add a new friend to a user's friend list
-
-* `DELETE` to remove a friend from a user's friend list
-
----
-
-**`/api/thoughts`**
-
-* `GET` to get all thoughts
-
-* `GET` to get a single thought by its `_id`
-
-* `POST` to create a new thought (don't forget to push the created thought's `_id` to the associated user's `thoughts` array field)
-
-```json
-// example data
-{
-  "thoughtText": "Here's a cool thought...",
-  "username": "lernantino",
-  "userId": "5edff358a0fcb779aa7b118b"
-}
-```
-
-* `PUT` to update a thought by its `_id`
-
-* `DELETE` to remove a thought by its `_id`
-
----
-
-**`/api/thoughts/:thoughtId/reactions`**
-
-* `POST` to create a reaction stored in a single thought's `reactions` array field
-
-* `DELETE` to pull and remove a reaction by the reaction's `reactionId` value
-
 ## Grading Requirements
 * Your GitHub repository containing your application code.
 * A walkthrough video that demonstrates the functionality of the social media API must be submitted, and a link to the video should be included in your README file.
@@ -225,19 +55,47 @@ This will not be a model, but rather will be used as the `reaction` field's subd
 ### Bonus: +10 Points
 * Application deletes a user's associated thoughts when the user is deleted.
 
+## Table of Content
+* [Credits](#credits)
+* [What-I-Learned](#what-i-learned)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Made-With](#made-with)
+* [License](#license)
+
 # Credits
 * Ben Armstrong https://github.com/BenArmstrong81 <br>
 
 *With special thanks to The University of Adelaide Full Stack Web Development Class.*
 
-# What I Learned
-Building on the first third of the course, the past 6 weeks we have learnt the following; Node.js, Object-Oriented Programming (OOP), Express.js, SQL, Object-Relational Mapping (ORM), Heruku, Model View Controller (MVC) and much much more!!
+# What-I-Learned
+Building on the two thirds of the course and extending on from the last couple weeks using Node.js we learnt how to incororate MongoDB (NoSQL) along with Mongoose. The modules in class included but not limited to; MongoDB, Mongoose, Virtuals, CRUD, Subdocuments, Models, Aggregates.
 
-Using the above skills I created this whole project from scratch including; HTML (using Handlebars,js), CSS, JavaScript, Node.js, Exress.js, SQL, GitHub, Heroku, Boostrap and README files. 
-  
-I feel rather proud, after only 13 weeks of coding and to be able to complete such a task is greatfully satisfying.
+# Installation  
 
-# Made With
+```
+npm install
+```
+
+# Usage
+To view this application,the following image shows the landing page of the application, or click on the page link that demonstrates the functionality of this project: <https://drive.google.com/file/d/1EOsd6Ku0YDq7rSSorPgvKGMy1k4rfGYe/view?usp=sharing>
+
+All users of this application:
+![NoSQL-Social-Network-API](./public/images/AllUsersScreenShot.PNG)
+
+All thoughts of this application:
+![NoSQL-Social-Network-API](./public/images/AllThoughtsScreenShot.PNG)
+
+Create a new user:
+![NoSQL-Social-Network-API](./public/images/CreateANewUserScreenShot.PNG)
+
+Create a new thought for a user:
+![NoSQL-Social-Network-API](./public/images/CreateANewThoughtScreenShot.PNG)
+
+Create a new reaction for a thought:
+![NoSQL-Social-Network-API](./public/images/CreateANewReactionScreenShot.PNG)
+
+# Made-With
 
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
